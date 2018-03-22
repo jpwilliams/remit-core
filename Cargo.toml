@@ -1,0 +1,12 @@
+[package]
+name = "remit-core"
+version = "0.1.0"
+authors = ["Jack Williams <jpwilliamsphotography@gmail.com>"]
+
+[dependencies]
+libc = "*"
+serde_json = "1.0"
+
+[lib]
+name = "remit_core"
+crate-type = ["dylib"]
