@@ -21,6 +21,7 @@ main() {
     cross rustc --target $TARGET --release
 
     # TODO Update this to package the right artifacts
+    ls target/$TARGET/release
     cp target/$TARGET/release/libremit_core.dylib $stage/
 
     cd $stage
