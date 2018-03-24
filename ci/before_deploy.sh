@@ -18,7 +18,13 @@ main() {
     test -f Cargo.lock || cargo generate-lockfile
 
     # TODO Update this to build the artifacts that matter to you
-    cross rustc --target $TARGET --release
+    # MUSL (Alpine) requires some oddness
+    if [[ $TARGET = *linux-musl* ]]
+    then
+        cross rustc --target $TARGET --release -- -C target-feature=-crt-static
+    else
+        cross rustc --target $TARGET --release
+    fi
 
     # TODO Update this to package the right artifacts
     ls target/$TARGET/release
