@@ -1,6 +1,6 @@
 [package]
 name = "remit-core"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Jack Williams <jpwilliamsphotography@gmail.com>"]
 
 [dependencies]
