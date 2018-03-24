@@ -12,7 +12,7 @@ $ZIP = "$SRC_DIR\$($Env:CRATE_NAME)-$($Env:APPVEYOR_REPO_TAG_NAME)-$($Env:TARGET
 
 # TODO Update this to package the right artifacts
 Get-ChildItem -Path "$SRC_DIR\target\$($Env:TARGET)\release" | Format-Wide -AutoSize -Property Name
-Copy-Item "$SRC_DIR\target\$($Env:TARGET)\release\libremit_core.dll" '.\'
+Copy-Item "$SRC_DIR\target\$($Env:TARGET)\release\remit_core.dll" '.\'
 
 7z a "$ZIP" *
 
