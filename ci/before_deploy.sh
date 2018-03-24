@@ -29,6 +29,9 @@ main() {
     # TODO Update this to package the right artifacts
     ls target/$TARGET/release
 
+    # Windows
+    [ -e target/$TARGET/release/remit_core.dll ] && cp target/$TARGET/release/remit_core.dll $stage/
+
     # Linux
     [ -e target/$TARGET/release/libremit_core.so ] && cp target/$TARGET/release/libremit_core.so $stage/
 
