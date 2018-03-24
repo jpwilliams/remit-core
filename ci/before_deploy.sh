@@ -22,7 +22,12 @@ main() {
 
     # TODO Update this to package the right artifacts
     ls target/$TARGET/release
-    cp target/$TARGET/release/libremit_core.dylib $stage/
+
+    # Linux
+    [ -e target/$TARGET/release/libremit_core.so ] && cp target/$TARGET/release/libremit_core.so $stage/
+
+    # MacOS
+    [ -e target/$TARGET/release/libremit_core.dylib ] && cp target/$TARGET/release/libremit_core.dylib $stage/
 
     cd $stage
     tar czf $src/$CRATE_NAME-$TRAVIS_TAG-$TARGET.tar.gz *
